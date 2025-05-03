@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #2196f3;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --transition-duration: 0.3s;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #2d2d2d;
+    --text-color: #ffffff;
+}
+
+/* Base styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) ease;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Animated box */
+.animated-box {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    margin: 2rem auto;
+    border-radius: 8px;
+    transition: transform var(--transition-duration) ease;
+}
+
+/* Animation keyframes */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+.animate {
+    animation: bounce 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Interactive button */
+.anim-button {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 
+        background-color var(--transition-duration) ease,
+        transform 0.2s ease;
+}
+
+.anim-button:hover {
+    background-color: #1976d2;
+    transform: scale(1.05);
+}
+
+/* Theme switcher */
+.theme-switcher {
+    margin-bottom: 2rem;
+}
+
+select {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
